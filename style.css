@@ -1,0 +1,120 @@
+@media print {
+  body {
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  h1, #card-container, #note-card-container, #text-card-container {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .card-svg {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    box-shadow: none !important;
+    margin: 0 !important;
+  }
+  /* Ensure backgrounds and colors print */
+  .roman-card rect, .note-card rect, .major-minor-card rect, .quality-card rect {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  /* Remove grid gaps for compact printing */
+  #card-container, #note-card-container, #text-card-container {
+    gap: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+}
+#text-card-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  justify-items: center;
+  padding: 24px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+body {
+  font-family: 'Lora', serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Lora', serif;
+  margin-top: 32px;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+
+#card-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  justify-items: center;
+  padding: 24px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#note-card-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  justify-items: center;
+  padding: 24px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+/* Card color palettes */
+.card-svg {
+  width: 240px;
+  height: 336px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  border-radius: 24px;
+  margin: 0;
+  display: block;
+}
+
+/* Roman Numeral Cards: Lighter Indigo background, white text */
+.roman-card rect {
+  fill: #c5cae9;
+  stroke: #7986cb;
+}
+.roman-card text {
+  fill: #222;
+}
+
+/* Note Cards: Lighter Teal background, white text */
+.note-card rect {
+  fill: #b2dfdb;
+  stroke: #4db6ac;
+}
+.note-card text {
+  fill: #222;
+}
+
+
+/* Major/Minor Cards: Lighter Amber background, dark text */
+.major-minor-card rect {
+  fill: #fff8e1;
+  stroke: #ffe082;
+}
+.major-minor-card text {
+  fill: #333;
+}
+
+/* Quality Cards: Light Red background, dark text */
+.quality-card rect {
+  fill: #ffcdd2;
+  stroke: #e57373;
+}
+.quality-card text {
+  fill: #b71c1c;
+}
